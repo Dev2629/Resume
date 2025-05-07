@@ -1,312 +1,487 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resume</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-    };
-  </script>
-  <style>
-    .transition {
-      transition: all 0.5s ease;
-    }
-    
-    /* Light Mode - Default */
-    body {
-      background-color: #F9FAFB;
-      color: #1F2937;
-    }
-  
-    /* Dark Mode */
-    body.dark {
-      background-color: #1F2937;
-      color: #E5E7EB;
-    }
-  
-    /* Add some custom hover effects for links */
-    a:hover {
-      text-decoration: underline;
-      color: #4C51BF;
-    }
-  
-    /* Add a glowing effect for headings */
-    h1, h2, h3 {
-      text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-    }
-  
-    /* Light mode button styles */
-    .light-mode-btn {
-      background-color: #E5E7EB;
-      color: #1F2937;
-    }
-  
-    /* Dark mode button styles */
-    .dark-mode-btn {
-      background-color: #4B5563;
-      color: #E5E7EB;
-    }
-  
-    /* Custom button hover styles */
-    .hover\:bg-gray-300:hover {
-      background-color: #D1D5DB;
-    }
-    .hover\:bg-gray-600:hover {
-      background-color: #4B5563;
-    }
-  </style>
-  
-</head>
-<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500">
-  <!-- Dark Mode Toggle Button -->
-  <div class="p-4 text-right">
-    <button onclick="document.documentElement.classList.toggle('dark')" class="px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition">
-      🌙 Dark Mode / Light Mode
-    </button>
-  </div>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dev Gandhi — Interactive Résumé</title>
 
-  <!-- Main Resume Section -->
-  <main class="max-w-4xl mx-auto p-6">
-    <!-- Profile Section with Animation -->
-    <section class="text-center mb-8 animate__animated animate__fadeIn">
-      <!-- Profile Image -->
-      <div class="mx-auto mb-4 w-40 h-40 rounded-full overflow-hidden border-2 border-indigo-600">
-        <img src="image.jpeg" alt="Profile Picture" class="w-full h-full object-cover">
-      </div>
-      <h1 class="text-5xl font-bold text-indigo-600 hover:text-indigo-500 transition-all duration-300">Dev Tejas Gandhi</h1>
-      <p class="text-xl text-gray-600 dark:text-gray-400 mt-2">Ph.D. Student | System Security Lab | IISc Bangalore</p>
-      <p class="mt-2 text-gray-500 dark:text-gray-400">
-        📧 <a href="mailto:devtgandhi@gmail.com">devtgandhi@gmail.com</a> | 🌐 <a href="https://www.linkedin.com/in/dev-gandhi0026/" target="_blank">LinkedIn: dev-gandhi0026</a> | 💻 <a href="https://github.com/Dev2629" target="_blank">GitHub: Dev2629</a>
-      </p>
-          </section>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['Poppins', 'ui-sans-serif', 'system-ui'],
+              body: ['Inter', 'ui-sans-serif', 'system-ui'],
+            },
+            colors: {
+              primary: {
+                50: '#eef2ff',
+                100: '#e0e7ff',
+                200: '#c7d2fe',
+                300: '#a5b4fc',
+                400: '#818cf8',
+                500: '#6366f1',
+                600: '#4f46e5',
+                700: '#4338ca',
+                800: '#3730a3',
+                900: '#312e81',
+              },
+            },
+          },
+        },
+      };
+    </script>
 
-<!-- Education Section with Card Style -->
-<section class="mb-6 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
-    <h2 class="text-2xl font-semibold text-indigo-600 dark:text-indigo-400 border-b border-gray-300 dark:border-gray-700 pb-2 mb-4">Education</h2>
-  
-    <!-- PhD Entry -->
-    <p><strong>Ph.D. in Computer Science</strong> – Indian Institute of Science (IISc)</p>
-    <p class="text-sm text-gray-500 dark:text-gray-400">2023 - Present</p>
-    <!-- B.Tech Entry -->
-    <p><strong>B.Tech. in CSE with specialization in Cyber Security</strong> – Rashtriya Raksha University, Gandhinagar</p>
-    <p class="text-sm text-gray-500 dark:text-gray-400">2019 - 2023</p>
-  </section>
-  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
 
+    <style>
+      /* ========================= GLOBAL EFFECTS ===================== */
+      :root {
+        --glass-bg: hsla(0, 0%, 100%, 0.18);
+        --glass-border: hsla(0, 0%, 100%, 0.3);
+      }
 
-<!-- Research Projects Section -->
-<section class="mb-6">
-    <h2 class="text-2xl font-semibold text-indigo-600 border-b border-gray-300 dark:border-gray-700 pb-2 mb-4">Research Projects</h2>
-  
-    <!-- ESROS2 Research Project Card -->
-    <div class="mb-4 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-indigo-50 dark:hover:bg-indigo-900 transition-all duration-300">
-      <h3 class="text-lg font-semibold text-indigo-500">Enhancing Application Sandbox of SROS2 <span class="text-sm text-gray-400 dark:text-gray-500">(May 2024 – Feb 2025)</span></h3>
-      <ul class="text-sm text-gray-500 dark:text-gray-400 list-disc pl-5">
-        <li>Currently under submission to the RAID 2025 conference.</li>
-        <li>Designed and implemented ESROS2, an extension to SROS2 that enforces syscall-level sandboxing for ROS2 applications using eBPF.</li>
-        <li>Enabled secure application confinement by verifying syscall context through stack walks, without requiring any binary modification.</li>
-      </ul>
-    </div>
-<!-- Secure Control-Flow Attestation Project Card -->
-<div class="mb-4 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-indigo-50 dark:hover:bg-indigo-900 transition-all duration-300">
-    <h3 class="text-lg font-semibold text-indigo-500">Secure CFA for User-Space Apps in Non-Bare-Metal Environments <span class="text-sm text-red-500">(Ongoing)</span></h3>
-    <ul class="text-sm text-gray-500 dark:text-gray-400 list-disc pl-5">
-      <li>Working on the design and implementation of Sulfur, a secure control-flow attestation (CFA) system for user-space applications in non-bare-metal environments.</li>
-      <li>Leveraged ARM TrustZone security features and a custom OS (SulfurOS) to achieve secure CFA.</li>
-      <li>Leveraging hardware features available in commodity ARM hardware, including privileged-access never (PAN) and privileged-execute never (PXN), to enhance security by restricting access to certain memory regions.</li>
-    </ul>
-  </div>
-  
-  
+      /* animated gradient background */
+      .bg-animated {
+        background: linear-gradient(120deg, #6366f1, #2dd4bf, #ec4899, #6366f1);
+        background-size: 400% 400%;
+        animation: gradient-flow 20s ease infinite;
+      }
+      @keyframes gradient-flow {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
 
+      /* Glass morphism helper */
+      .glass {
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        backdrop-filter: blur(10px);
+      }
 
-</section>
-  
-  
+      /* Scrollbar styling */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(99, 102, 241, 0.4);
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body class="relative min-h-screen font-body text-gray-800 dark:bg-gray-900 dark:text-gray-100 bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-500">
+    <!--  ========================  MOBILE NAV + THEME TOGGLE  ======================== -->
+    <header class="fixed top-4 left-1/2 -translate-x-1/2 z-30 flex items-center gap-4">
+      <nav id="nav" class="hidden md:flex gap-6 text-sm font-medium glass rounded-full px-6 py-3 shadow-lg backdrop-blur-md">
+        <a href="#about" class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary-500">About</a>
+        <a href="#education" class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary-500">Education</a>
+        <a href="#research" class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary-500">Research</a>
+        <a href="#projects" class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary-500">Projects</a>
+        <a href="#experience" class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary-500">Experience</a>
+        <a href="#skills" class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary-500">Skills</a>
+      </nav>
 
+      <!-- burger for small screens -->
+      <button id="burger" class="md:hidden glass rounded-full p-2 shadow-lg backdrop-blur">🍔</button>
 
+      <!-- theme toggle -->
+      <button id="theme-toggle" class="glass rounded-full p-2 shadow-lg backdrop-blur text-lg" title="Toggle theme">
+        🌙
+      </button>
+    </header>
 
+    <!--  ========================  BURGER MENU DRAWER (mobile)  ======================== -->
+    <aside id="drawer" class="fixed top-0 right-0 h-full w-64 -translate-x-full md:hidden transition-transform duration-500 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg z-40 p-8 flex flex-col gap-6 text-lg"></aside>
 
-
-    <!-- Projects Section with Hover Animation on Cards -->
-
-
-
-
-
-
-
-
-
-
-   <section class="mb-6">
-    <h2 class="text-2xl font-semibold text-indigo-600 border-b border-gray-300 dark:border-gray-700 pb-2 mb-4">Projects</h2>
-    
-    <!-- System Call Sandbox Project -->
-    <div class="mb-4 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-indigo-50 dark:hover:bg-indigo-900 transition-all duration-300">
-      <h3 class="text-lg font-semibold text-indigo-500">System Call Sandbox</h3>
-      <ul class="text-sm text-gray-500 dark:text-gray-400 list-disc pl-5">
-        <li>Implemented a per-process system call sandbox in the kernel, aiming to develop a tool that extracts an application’s system call policies before execution and enforces them at runtime.</li>
-        <li>Performed static binary analysis to extract the system call graph using the Angr binary analysis tool.</li>
-        <li>Used eBPF to enforce the system call graph (DFA) in the kernel at runtime.</li>
-      </ul>
-    </div>
-    
-  
-    <!-- Memory Checkpointing Feature using eBPF Project -->
-    <div class="mb-4 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-indigo-50 dark:hover:bg-indigo-900 transition-all duration-300">
-      <h3 class="text-lg font-semibold text-indigo-500">Memory Checkpointing Feature using eBPF</h3>
-      <ul class="text-sm text-gray-500 dark:text-gray-400 list-disc pl-5">
-        <li>Designed and executed a system to capture and restore process memory states using eBPF. Created tracepoint handlers for system calls to intercept and manage memory operations, enhancing process memory tracking and logging.</li>
-        <li>Addressed challenges such as excluding stack VMAs during checkpointing and ensured efficient memory write-back using eBPF helpers, resulting in robust state restoration capabilities.</li>
-      </ul>
-    </div>
-
-
-  
-    <!-- Branch Predictors and CPI Evaluation Project -->
-    <div class="mb-4 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-indigo-50 dark:hover:bg-indigo-900 transition-all duration-300">
-        <h3 class="text-lg font-semibold text-indigo-500">Branch Predictors and CPI Stack Evaluation</h3>
-        <ul class="text-sm text-gray-500 dark:text-gray-400 list-disc pl-5">
-          <li>Evaluated different branch predictors using the Champsim simulator. Included G-share, perceptron, and a variant of the TAGE predictor.</li>
-          <li>Analyzed CPI (Cycles Per Instruction) using hardware performance counters and developed a simple linear regression model for benchmark applications.</li>
-        </ul>
-      </div>
-    
-      <!-- Optimizing Performance of Dilated Convolution Project -->
-      <div class="mb-4 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-indigo-50 dark:hover:bg-indigo-900 transition-all duration-300">
-        <h3 class="text-lg font-semibold text-indigo-500">Optimizing Performance of Dilated Convolution</h3>
-        <ul class="text-sm text-gray-500 dark:text-gray-400 list-disc pl-5">
-          <li>Applied advanced optimization techniques such as loop unrolling, elimination of redundant computations, strength reduction, and SIMD to enhance the performance of the dilated convolution algorithm.</li>
-          <li>Developed and optimized a multi-threaded version using pthreads of the dilated convolution algorithm, leveraging parallel processing.</li>
-        </ul>
-      </div>
-    
-  
-  
-    <!-- Microservice Booking System Project -->
-<div class="mb-4 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-indigo-50 dark:hover:bg-indigo-900 transition-all duration-300">
-    <h3 class="text-lg font-semibold text-indigo-500">Microservice Implementation for Booking System using Spring</h3>
-    <ul class="text-sm text-gray-500 dark:text-gray-400 list-disc pl-5">
-      <li>Implemented a distributed and scalable booking system using Spring Boot containing three microservices: User, Wallet, and Booking.</li>
-      <li>Designed RESTful APIs to handle HTTP requests and deployed the services using Kubernetes with load balancing to manage runtime load.</li>
-      <li>Reimplemented the Booking microservice using the Akka actor model, creating a dedicated Show actor for each show to manage all booking-related state and operations.</li>
-    </ul>
-  </div>
-  
-
-  </section>
-  
-  
-  <!-- Experience Section -->
-<section class="mb-6">
-    <h2 class="text-2xl font-semibold text-indigo-600 border-b border-gray-300 dark:border-gray-700 pb-2 mb-4">Experience</h2>
-  
-    <!-- Teaching Assistant Experience Card -->
-    <div class="mb-4 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-indigo-50 dark:hover:bg-indigo-900 transition-all duration-300">
-      <h3 class="text-lg font-semibold text-indigo-500">Teaching Assistant - August Term 2024</h3>
-      <ul class="text-sm text-gray-500 dark:text-gray-400 list-disc pl-5">
-        <li>Assisted in teaching and grading assignments for Computer System Security.</li>
-        <li>Evaluated student projects and provided feedback.</li>
-      </ul>
-    </div>
-  </section>
-  
-
-  
-
-<!-- Skills and Achievements Section -->
-<section class="mb-8">
-    <h2 class="text-2xl font-semibold text-indigo-600 border-b border-gray-300 dark:border-gray-700 pb-2 mb-4">Skills & Achievements</h2>
-  
-    <!-- Achievements Card -->
-    <div class="mb-6 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-indigo-50 dark:hover:bg-indigo-900 transition-all duration-300">
-      <h3 class="text-lg font-semibold text-indigo-500">Achievements</h3>
-      <p class="text-sm text-gray-500 dark:text-gray-400">
-        • Achieved AIR 60 in GATE CS'23.
-      </p>
-    </div>
-  
-    <!-- Languages and Technologies -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <!-- Languages Card -->
-      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-indigo-50 dark:hover:bg-indigo-900 transition-all duration-300">
-        <h3 class="text-lg font-semibold text-indigo-500 mb-3">Languages</h3>
-        <div class="flex flex-wrap gap-3">
-          <span class="badge">C</span>
-          <span class="badge">Python</span>
-          <span class="badge">C++</span>
-          <span class="badge">SQL</span>
-          <span class="badge">JavaScript</span>
-          <span class="badge">Java</span>
-          <span class="badge">C-Sharp</span>
+    <!--  ========================  HERO  ======================== -->
+    <section id="about" class="relative flex flex-col items-center justify-center text-center min-h-screen overflow-hidden bg-animated dark:opacity-80">
+      <div class="absolute inset-0 bg-black/10 dark:bg-black/30"></div>
+      <div class="relative z-10 max-w-2xl mx-auto px-6 py-24 lg:py-32">
+        <img src="Image.jpeg" alt="Dev Gandhi" class="mx-auto w-40 h-40 rounded-full border-4 border-primary-400 shadow-lg object-cover mb-6" />
+        <h1 class="font-display text-4xl sm:text-6xl font-extrabold tracking-tight text-white drop-shadow-lg">
+          <span class="block">Dev Tejas Gandhi</span>
+          <span id="typed" class="block text-primary-200 text-xl sm:text-3xl mt-3 font-semibold"></span>
+        </h1>
+        <p class="mt-4 max-w-xl mx-auto text-gray-100/90 text-lg">
+          Ph.D. Student — 
+          <a href="https://www.csa.iisc.ac.in/cssl/index.html" target="_blank" class="text-black dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400">System Security Lab</a>, IISc Bangalore
+        </p>
+                     <div class="flex justify-center gap-6 mt-6">
+          <a href="mailto:devtgandhi@gmail.com" class="glass px-4 py-2 rounded-full font-medium hover:scale-105 transition">Email</a>
+          <a href="https://www.linkedin.com/in/dev-gandhi0026/" target="_blank" class="glass px-4 py-2 rounded-full font-medium hover:scale-105 transition">LinkedIn</a>
+          <a href="https://github.com/Dev2629" target="_blank" class="glass px-4 py-2 rounded-full font-medium hover:scale-105 transition">GitHub</a>
         </div>
       </div>
-  
-      <!-- Technologies and Tools Card -->
-      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-indigo-50 dark:hover:bg-indigo-900 transition-all duration-300">
-        <h3 class="text-lg font-semibold text-indigo-500 mb-3">Technologies & Tools</h3>
-        <div class="flex flex-wrap gap-3">
-          <span class="badge">eBPF</span>
-          <span class="badge">SELinux</span>
-          <span class="badge">AppArmor</span>
-          <span class="badge">ROS</span>
-          <span class="badge">gRPC</span>
-          <span class="badge">Burpsuite</span>
-          <span class="badge">Linux kernel</span>
-          <span class="badge">Docker</span>
-          <span class="badge">Spring-boot</span>
-          <span class="badge">Kubernetes</span>
-          <span class="badge">WebAssembly</span>
-          <span class="badge">LLVM</span>
-          <span class="badge">QEMU</span>
-          <span class="badge">ARM-Trustzone</span>
+      <!-- subtle scroll cue -->
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-2xl">⌄</div>
+    </section>
+
+    <!--  ========================  TIMELINE / CONTENT WRAPPER  ======================== -->
+    <main class="relative z-20 max-w-5xl mx-auto px-6 py-20 space-y-24">
+      <!-- ---------- Education ---------- -->
+      <section id="education" class="group flex flex-col gap-6">
+        <h2 class="font-display text-3xl font-bold text-primary-600 dark:text-primary-400 mb-4">Education</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="glass rounded-2xl p-6 shadow-lg border-l-4 border-primary-500 hover:-translate-y-1 hover:shadow-2xl transition">
+            <h3 class="font-semibold text-lg">Indian Institute of Science (IISc) — Ph.D. Computer Science</h3>
+            <p class="text-sm opacity-70">2023 – Present</p>
+          </div>
+          <div class="glass rounded-2xl p-6 shadow-lg border-l-4 border-primary-500 hover:-translate-y-1 hover:shadow-2xl transition">
+            <h3 class="font-semibold text-lg">Rashtriya Raksha University — B.Tech. CSE (Cyber Security)</h3>
+            <p class="text-sm opacity-70">2019 – 2023</p>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-<!-- Styles for Badges -->
+      </section>
+
+      <!-- ---------- Research ---------- -->
+      <section id="research" class="group flex flex-col gap-6">
+        <h2 class="font-display text-3xl font-bold text-primary-600 dark:text-primary-400 mb-4">Research Highlights</h2>
+        <div class="space-y-6">
+          <article class="glass rounded-xl p-6 shadow-lg hover:shadow-2xl transition border border-transparent hover:border-primary-500">
+            <header class="flex items-center justify-between mb-2">
+              <h3 class="font-semibold text-xl">Enhancing Application Sandbox of SROS2</h3>
+              <span class="text-xs bg-primary-500/10 text-primary-700 dark:text-primary-300 px-2 py-1 rounded-full">May 2024 → Feb 2025</span>
+            </header>
+            <ul class="list-disc list-inside space-y-1 text-sm opacity-80">
+              <li>ESROS2 brings syscall‑level sandboxing to ROS2 apps using eBPF.</li>
+              <li>Achieves confinement without binary modification via <em>context‑aware</em> stack walks.</li>
+              <li>Under submission to RAID 2025.</li>
+            </ul>
+          </article>
+
+          <article class="glass rounded-xl p-6 shadow-lg hover:shadow-2xl transition border border-transparent hover:border-primary-500">
+            <header class="flex items-center justify-between mb-2">
+              <h3 class="font-semibold text-xl">Secure CFA in Non‑Bare‑Metal Environments</h3>
+              <span class="text-xs bg-red-500/10 text-red-600 dark:text-red-400 px-2 py-1 rounded-full">Ongoing</span>
+            </header>
+            <ul class="list-disc list-inside space-y-1 text-sm opacity-80">
+              <li>Designing <strong>Sulfur</strong>, leveraging ARM TrustZone & PAN / PXN for secure control‑flow attestation.</li>
+              <li>Custom micro‑kernel (<em>SulfurOS</em>) to isolate measurement agents.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- ---------- Projects ---------- -->
+      <section id="projects" class="group flex flex-col gap-6">
+        <h2 class="font-display text-3xl font-bold text-primary-600 dark:text-primary-400 mb-4">Selected Projects</h2>
+        <div class="space-y-6">
+      
+          <!-- System Call Sandbox Project -->
+          <article class="glass rounded-xl p-6 shadow-lg hover:shadow-2xl transition border border-transparent hover:border-primary-500">
+            <header class="flex items-center justify-between mb-2">
+              <h3 class="font-semibold text-xl">System Call Sandbox</h3>
+            </header>
+            <ul class="list-disc list-inside space-y-1 text-sm opacity-80">
+              <li>Implemented a per-process system call sandbox in the kernel, using eBPF to enforce system call graphs at runtime.</li>
+              <li>Performed static binary analysis with the Angr binary analysis tool to extract the system call graph.</li>
+              <li>Developed a runtime tool that enforces system call policies for enhanced security.</li>
+            </ul>
+          </article>
+      
+          <!-- Memory Checkpointing Feature using eBPF Project -->
+          <article class="glass rounded-xl p-6 shadow-lg hover:shadow-2xl transition border border-transparent hover:border-primary-500">
+            <header class="flex items-center justify-between mb-2">
+              <h3 class="font-semibold text-xl">Memory Checkpointing Feature using eBPF</h3>
+          </header>
+            <ul class="list-disc list-inside space-y-1 text-sm opacity-80">
+              <li>Designed and executed a system to capture and restore process memory states using eBPF.</li>
+              <li>Developed tracepoint handlers to intercept and manage memory operations, improving process memory tracking.</li>
+              <li>Addressed challenges in checkpointing, including stack VMAs and efficient memory write-back using eBPF helpers.</li>
+            </ul>
+          </article>
+      
+          <!-- Branch Predictors and CPI Evaluation Project -->
+          <article class="glass rounded-xl p-6 shadow-lg hover:shadow-2xl transition border border-transparent hover:border-primary-500">
+            <header class="flex items-center justify-between mb-2">
+              <h3 class="font-semibold text-xl">Branch Predictors and CPI Stack Evaluation</h3>
+            </header>
+            <ul class="list-disc list-inside space-y-1 text-sm opacity-80">
+              <li>Evaluated various branch predictors using the Champsim simulator, including G-share and TAGE predictors.</li>
+              <li>Analyzed CPI (Cycles Per Instruction) using hardware performance counters and developed a linear regression model for benchmarks.</li>
+            </ul>
+          </article>
+      
+          <!-- Optimizing Performance of Dilated Convolution Project -->
+          <article class="glass rounded-xl p-6 shadow-lg hover:shadow-2xl transition border border-transparent hover:border-primary-500">
+            <header class="flex items-center justify-between mb-2">
+              <h3 class="font-semibold text-xl">Optimizing Performance of Dilated Convolution</h3>
+                </header>
+            <ul class="list-disc list-inside space-y-1 text-sm opacity-80">
+              <li>Applied optimization techniques like loop unrolling, SIMD, and strength reduction to optimize dilated convolution performance.</li>
+              <li>Developed a multi-threaded version using pthreads, enabling parallel processing to enhance performance.</li>
+            </ul>
+          </article>
+      
+          <!-- Microservice Booking System Project -->
+          <article class="glass rounded-xl p-6 shadow-lg hover:shadow-2xl transition border border-transparent hover:border-primary-500">
+            <header class="flex items-center justify-between mb-2">
+              <h3 class="font-semibold text-xl">Microservice Implementation for Booking System using Spring</h3>
+            </header>
+            <ul class="list-disc list-inside space-y-1 text-sm opacity-80">
+              <li>Implemented a distributed booking system using Spring Boot with microservices: User, Wallet, and Booking.</li>
+              <li>Designed and deployed services using Kubernetes with load balancing, handling HTTP requests via RESTful APIs.</li>
+              <li>Reimplemented the Booking microservice using the Akka actor model, improving state management and scalability.</li>
+            </ul>
+          </article>
+        
+        </div>
+      </section>
+          
+      <!-- ---------- Experience ---------- -->
+      <section id="experience" class="group flex flex-col gap-6">
+        <h2 class="font-display text-3xl font-bold text-primary-600 dark:text-primary-400 mb-4">Experience</h2>
+      
+        <!-- Teaching Assistant Card -->
+        <article class="glass rounded-xl p-6 shadow-lg hover:shadow-2xl transition border border-transparent hover:border-primary-500">
+          <header class="flex items-center justify-between mb-2">
+            <h3 class="font-semibold text-xl">Teaching Assistant — Computer System Security</h3>
+            <span class="text-xs bg-primary-500/10 text-primary-700 dark:text-primary-300 px-2 py-1 rounded-full">Aug 2024 Term</span>
+          </header>
+          <ul class="list-disc list-inside text-sm opacity-80 space-y-1">
+            <li>Guided students & graded assignments on kernel exploitation and mitigations.</li>
+            <li>Mentored final projects focused on securing robotics platforms.</li>
+          </ul>
+        </article>
+      </section>
+      
+
+     
+
+
+      <!-- ---------- Skills & Tooling ---------- -->
+      <section id="experience" class="group flex flex-col gap-6">
+        <h2 class="font-display text-3xl font-bold text-primary-600 dark:text-primary-400 mb-4">Skills & Achievements</h2>
+      
+        <!-- Achievements Card -->
+        <article class="glass rounded-xl p-6 shadow-lg hover:shadow-2xl transition border border-transparent hover:border-primary-500">
+          <header class="flex items-center justify-between mb-2">
+            <h3 class="font-semibold text-xl text-indigo-500">Achievements</h3>
+            <span class="text-xs bg-primary-500/10 text-primary-700 dark:text-primary-300 px-2 py-1 rounded-full">GATE CS 2023</span>
+          </header>
+          <ul class="list-disc list-inside text-sm opacity-80 space-y-1">
+            <li>Achieved AIR 60 in GATE CS’23.</li>
+          </ul>
+        </article>
+      
+
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Languages Card -->
+          <article class="glass rounded-xl p-6 shadow-lg hover:shadow-2xl transition border border-transparent hover:border-primary-500">
+            <header class="flex items-center justify-between mb-3">
+              <h3 class="font-semibold text-xl text-indigo-500">Languages</h3>
+            </header>
+            <div class="flex flex-wrap gap-3 text-sm opacity-80">
+              <span class="badge">C</span>
+              <span class="badge">Python</span>
+              <span class="badge">C++</span>
+              <span class="badge">SQL</span>
+              <span class="badge">JavaScript</span>
+              <span class="badge">Java</span>
+              <span class="badge">C-Sharp</span>
+            </div>
+          </article>
+        
+          <!-- Technologies and Tools Card -->
+          <article class="glass rounded-xl p-6 shadow-lg hover:shadow-2xl transition border border-transparent hover:border-primary-500">
+            <header class="flex items-center justify-between mb-3">
+              <h3 class="font-semibold text-xl text-indigo-500">Technologies & Tools</h3>
+            </header>
+            <div class="flex flex-wrap gap-3 text-sm opacity-80">
+              <span class="badge">eBPF</span>
+              <span class="badge">SELinux</span>
+              <span class="badge">AppArmor</span>
+              <span class="badge">ROS</span>
+              <span class="badge">gRPC</span>
+              <span class="badge">Burpsuite</span>
+              <span class="badge">Linux kernel</span>
+              <span class="badge">Docker</span>
+              <span class="badge">Spring-boot</span>
+              <span class="badge">Kubernetes</span>
+              <span class="badge">WebAssembly</span>
+              <span class="badge">LLVM</span>
+              <span class="badge">QEMU</span>
+              <span class="badge">ARM-Trustzone</span>
+            </div>
+          </article>
+        </div>        
+        <!-- Styles for Badges -->
 <style>
-    .badge {
-      background-color: #E0E7FF;
-      color: #4C51BF;
-      font-weight: 500;
-      padding: 6px 12px;
-      border-radius: 16px;
-      font-size: 0.875rem;
-      transition: all 0.3s ease;
-    }
+  .badge {
+    background-color: #E0E7FF;
+    color: #4C51BF;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+  }
+
+  .badge:hover {
+    background-color: #4C51BF;
+    color: white;
+  }
+
+  /* Dark Mode Styles */
+  .dark .badge {
+    background-color: #2D3748;
+    color: #A0AEC0;
+  }
+
+  .dark .badge:hover {
+    background-color: #4C51BF;
+    color: white;
+  }
+</style>
+
+
   
-    .badge:hover {
-      background-color: #4C51BF;
-      color: white;
-    }
-  
-    /* Dark Mode Styles */
-    .dark .badge {
-      background-color: #2D3748;
-      color: #A0AEC0;
-    }
-  
-    .dark .badge:hover {
-      background-color: #4C51BF;
-      color: white;
-    }
-  </style>
-  
-  
+</section>
 
 
 
-</main>
+    <!--  ========================  JAVASCRIPT MAGIC  ======================== -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.16"></script>
+    <script>
+      /* ========= tiny helpers ========= */
+      const qs = (s, o = document) => o.querySelector(s);
+      const qsa = (s, o = document) => [...o.querySelectorAll(s)];
 
-  <!-- Add Animate.css for animations -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.js"></script>
-</body>
+      /* ========= theme toggle ========= */
+      const themeBtn = qs('#theme-toggle');
+      themeBtn.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        themeBtn.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+      });
+
+      /* ========= mobile drawer ========= */
+      const burger = qs('#burger');
+      const drawer = qs('#drawer');
+      const navLinksContent = `
+        <a href="#about" class="py-2 nav-link">About</a>
+        <a href="#education" class="py-2 nav-link">Education</a>
+        <a href="#research" class="py-2 nav-link">Research</a>
+        <a href="#projects" class="py-2 nav-link">Projects</a>
+        <a href="#experience" class="py-2 nav-link">Experience</a>
+        <a href="#skills" class="py-2 nav-link">Skills</a>
+      `;
+      drawer.innerHTML = navLinksContent;
+      burger.addEventListener('click', () => {
+        drawer.classList.toggle('-translate-x-full');
+      });
+      // close drawer on link click
+      drawer.addEventListener('click', e => {
+        if (e.target.matches('.nav-link')) drawer.classList.add('-translate-x-full');
+      });
+
+      /* ========= type effect ========= */
+      new Typed('#typed', {
+        strings: ['Kernel Security Researcher', 'eBPF Wizard', 'CTF Enthusiast'],
+        typeSpeed: 60,
+        backSpeed: 30,
+        backDelay: 1500,
+        loop: true,
+      });
+
+      /* ========= dynamic project grid & filters ========= */
+      const projects = [
+        {
+          title: 'System Call Sandbox',
+          tags: ['Kernel', 'eBPF'],
+          desc: 'Per‑process syscall policy extraction & real‑time enforcement with angr + eBPF.',
+        },
+        {
+          title: 'Memory Checkpointing via eBPF',
+          tags: ['Kernel', 'Observability'],
+          desc: 'Capture & restore process state with zero intrusive patches using custom tracepoints.',
+        },
+        {
+          title: 'Branch Predictors + CPI Stack',
+          tags: ['Architecture', 'Performance'],
+          desc: 'Simulated G‑Share, Perceptron & TAGE predictors; regression‑modeled CPI per benchmark.',
+        },
+        {
+          title: 'Distributed Booking Microservices',
+          tags: ['Microservices', 'Kubernetes'],
+          desc: 'User / Wallet / Booking in Spring Boot, autoscaled on K8s with an actor‑based rewrite.',
+        },
+        {
+          title: 'Dilated Convolution Optimizer',
+          tags: ['Performance', 'SIMD'],
+          desc: 'Loop unrolling, SIMD, & parallel threading to turbo‑charge deep‑learning kernels.',
+        },
+      ];
+
+      const filtersEl = qs('#filter-chips');
+      const gridEl = qs('#project-grid');
+      let activeFilter = 'All';
+
+      const uniqueTags = ['All', ...new Set(projects.flatMap(p => p.tags))];
+      uniqueTags.forEach(tag => {
+        const chip = document.createElement('button');
+        chip.textContent = tag;
+        chip.className = 'px-3 py-1 rounded-full text-sm glass hover:scale-105 transition ' + (tag === 'All' ? 'bg-primary-500 text-white' : '');
+        chip.addEventListener('click', () => {
+          activeFilter = tag;
+          [...filtersEl.children].forEach(c => c.classList.remove('bg-primary-500', 'text-white'));
+          chip.classList.add('bg-primary-500', 'text-white');
+          renderProjects();
+        });
+        filtersEl.appendChild(chip);
+      });
+
+      function renderProjects() {
+        gridEl.innerHTML = '';
+        projects
+          .filter(p => activeFilter === 'All' || p.tags.includes(activeFilter))
+          .forEach(p => {
+            const card = document.createElement('div');
+            card.className = 'glass rounded-xl p-6 shadow-lg hover:shadow-2xl transition border border-transparent hover:border-primary-500';
+            card.innerHTML = `
+              <h3 class="font-semibold text-xl mb-2">${p.title}</h3>
+              <p class="text-sm opacity-80 mb-3">${p.desc}</p>
+              <div class="flex flex-wrap gap-2">${p.tags.map(t => `<span class="text-xs px-2 py-1 bg-primary-500/10 text-primary-700 dark:text-primary-300 rounded-full">${t}</span>`).join('')}</div>
+            `;
+            gridEl.appendChild(card);
+          });
+      }
+      renderProjects();
+
+      /* ========= populate badges ========= */
+      const langs = ['C', 'C++', 'Python', 'JavaScript', 'SQL', 'Java', 'C#'];
+      const techs = ['eBPF', 'SELinux', 'Docker', 'Kubernetes', 'ROS', 'Spring', 'gRPC', 'LLVM', 'WebAssembly', 'Linux kernel', 'TrustZone'];
+      const makeBadge = t => `<span class="glass px-3 py-1 rounded-full hover:scale-105 transition">${t}</span>`;
+      qs('#lang-badges').innerHTML = langs.map(makeBadge).join('');
+      qs('#tech-badges').innerHTML = techs.map(makeBadge).join('');
+
+      /* ========= active nav link highlighting ========= */
+      const sections = qsa('main section');
+      const navLinks = qsa('.nav-link');
+      const cb = entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(l => l.classList.remove('text-primary-500', 'font-semibold'));
+            const id = entry.target.id;
+            qsa(`.nav-link[href="#${id}"]`).forEach(l => l.classList.add('text-primary-500', 'font-semibold'));
+          }
+        });
+      };
+      const observer = new IntersectionObserver(cb, { threshold: 0.35 });
+      sections.forEach(s => observer.observe(s));
+    </script>
+  </body>
 </html>
-
-
-
