@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentations - Dev Gandhi</title>
+  <link rel="stylesheet" href="styles.css?v=3">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="animated-background"></div>
+  
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">Dev Gandhi</a>
+      <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="presentations.html" class="active">Presentations</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2 class="section-title">Presentations</h2>
+
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-content">
+          <h3>CSA Summer School 2025</h3>
+          <p>Gave a talk on <strong>ARM Confidential Computing Architecture</strong></p>
+          <div class="tags">
+            <span class="badge">ARM</span>
+            <span class="badge">Confidential Computing</span>
+            <span class="badge">Security</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <h3>Databased (IISc UG Club)</h3>
+          <p>Presented on <strong>SROS2 Sandboxing Mechanisms</strong></p>
+          <div class="tags">
+            <span class="badge">ROS2</span>
+            <span class="badge">Sandboxing</span>
+            <span class="badge">Security</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <h3>Advanced Compilers Talk</h3>
+          <p>Technical talk on <strong>PyTorch 2 Internals</strong>, covering its compilation pipeline and compiler optimization mechanisms</p>
+          <div class="tags">
+            <span class="badge">PyTorch</span>
+            <span class="badge">Compilers</span>
+            <span class="badge">Optimization</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

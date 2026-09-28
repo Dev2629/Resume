@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Dev Gandhi</title>
+  <link rel="stylesheet" href="styles.css?v=3">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="animated-background"></div>
+  
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">Dev Gandhi</a>
+      <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="presentations.html">Presentations</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-content">
+          <h3>System Call Sandbox</h3>
+          <p>Per-process syscall policy extraction & enforcement with eBPF</p>
+          <ul>
+            <li>Implemented a per-process system call sandbox in the kernel</li>
+            <li>Static binary analysis with Angr to extract system call graphs</li>
+            <li>Runtime enforcement using eBPF for enhanced security</li>
+          </ul>
+          <div class="tags">
+            <span class="badge">eBPF</span>
+            <span class="badge">Kernel</span>
+            <span class="badge">Angr</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <h3>eBPF User-Space Stack Walker</h3>
+          <p>Kernel-level runtime inspection of user-space execution stacks</p>
+          <ul>
+            <li>Built custom eBPF-based user-space stack walker</li>
+            <li>Stack-frame analysis to recover call chains similar to GDB's bt</li>
+            <li>Enabled kernel-level runtime inspection without user-space tools</li>
+          </ul>
+          <div class="tags">
+            <span class="badge">eBPF</span>
+            <span class="badge">Stack Tracing</span>
+            <span class="badge">Debugging</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <h3>Memory Checkpointing via eBPF</h3>
+          <p>Capture & restore process state with custom tracepoints</p>
+          <ul>
+            <li>Designed system to capture and restore process memory states</li>
+            <li>Developed tracepoint handlers for memory operations</li>
+            <li>Improved process memory tracking capabilities</li>
+          </ul>
+          <div class="tags">
+            <span class="badge">eBPF</span>
+            <span class="badge">Memory</span>
+            <span class="badge">Kernel</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <h3>MLIR Anticipated Expression Hoisting</h3>
+          <p>Optimization pass with custom dataflow analysis</p>
+          <ul>
+            <li>Designed MLIR optimization pass for anticipated expressions</li>
+            <li>Custom dataflow analysis implementation</li>
+            <li>Code hoisting to eliminate redundant computations</li>
+          </ul>
+          <div class="tags">
+            <span class="badge">MLIR</span>
+            <span class="badge">LLVM</span>
+            <span class="badge">Optimization</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <h3>Branch Predictors & CPI Stack</h3>
+          <p>Simulated G-Share, Perceptron & TAGE predictors</p>
+          <ul>
+            <li>Evaluated various branch predictors using Champsim simulator</li>
+            <li>Analyzed CPI using hardware performance counters</li>
+            <li>Developed linear regression model for benchmarks</li>
+          </ul>
+          <div class="tags">
+            <span class="badge">Architecture</span>
+            <span class="badge">Performance</span>
+            <span class="badge">Simulation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <h3>Dilated Convolution Optimizer</h3>
+          <p>High-performance deep learning kernel optimization</p>
+          <ul>
+            <li>Applied loop unrolling, SIMD, and strength reduction</li>
+            <li>Multi-threaded version using pthreads</li>
+            <li>Significant performance improvements for ML workloads</li>
+          </ul>
+          <div class="tags">
+            <span class="badge">Performance</span>
+            <span class="badge">SIMD</span>
+            <span class="badge">Parallel</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <h3>Microservices Booking System</h3>
+          <p>Spring Boot microservices on Kubernetes</p>
+          <ul>
+            <li>Distributed booking system with User, Wallet, and Booking services</li>
+            <li>Deployed on Kubernetes with load balancing</li>
+            <li>Reimplemented using Akka actor model for improved scalability</li>
+          </ul>
+          <div class="tags">
+            <span class="badge">Spring Boot</span>
+            <span class="badge">Kubernetes</span>
+            <span class="badge">Microservices</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience - Dev Gandhi</title>
+  <link rel="stylesheet" href="styles.css?v=3">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="animated-background"></div>
+  
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">Dev Gandhi</a>
+      <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experience.html" class="active">Experience</a></li>
+        <li><a href="presentations.html">Presentations</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2 class="section-title">Experience</h2>
+
+    <div class="cards-grid">
+      <div class="card border-accent">
+        <div class="card-content">
+          <div class="card-header">
+            <div>
+              <h3>Teaching Assistant</h3>
+              <p><strong>Computer System Security</strong></p>
+            </div>
+            <span class="badge">Aug 2024 - Aug 2025</span>
+          </div>
+          <ul>
+            <li>Graded assignments for the Computer System Security course</li>
+            <li>Assessed student projects as part of course evaluation</li>
+            <li>Provided guidance and support to students on security concepts</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
